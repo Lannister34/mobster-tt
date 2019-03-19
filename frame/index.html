@@ -9,7 +9,6 @@
         (function () {
           const body = document.body;
           const html = document.querySelector('html');
-          const mql = window.matchMedia("(orientation: portrait)");
 
           html.style.width = "100%";
           html.style.height = "100%";
@@ -20,7 +19,7 @@
           body.style.backgroundSize = "contain";
           body.style.backgroundPosition = "center";
 
-          if (mql.matches) {
+          if (window.orientation == 'portrait-primary' || window.orientation == 'portrait-secondary') {
             body.style.backgroundImage = "url('portrait.png')";
             body.style.backgroundColor = "#40bb63";
           } else {
