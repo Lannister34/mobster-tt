@@ -43,19 +43,6 @@
             }
           }, false);
 
-          window.addEventListener("onfocus", function () {
-            const body = document.body;
-            const orientation = screen.msOrientation || screen.mozOrientation || (screen.orientation || {}).type;
-
-            if (orientation == 'portrait-primary' || orientation == 'portrait-secondary') {
-              body.style.backgroundImage = "url('portrait.png')";
-              body.style.backgroundColor = "#40bb63";
-            } else {
-                body.style.backgroundImage = "url('landscape.png')";
-                body.style.backgroundColor = "#3b68cc";
-            }
-          }, false);
-        })();
       </script>
     </body>
 </html>
