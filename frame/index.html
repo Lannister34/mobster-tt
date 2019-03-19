@@ -9,17 +9,18 @@
         (function () {
           const body = document.body;
           const html = document.querySelector('html');
+          const orientation = screen.msOrientation || screen.mozOrientation || (screen.orientation || {}).type;
 
-          html.style.width = "100%";
-          html.style.height = "100%";
-          body.style.width = "100%";
-          body.style.height = "100%";
-          body.style.margin = "0";
-          body.style.backgroundRepeat = "no-repeat";
-          body.style.backgroundSize = "contain";
-          body.style.backgroundPosition = "center";
+          html.style.cssText = "width: 100%; \
+                                height: 100%;";
+          body.style.cssText = "width: 100%; \
+                                height: 100%; \
+                                margin: 0; \
+                                background-repeat: no-repeat; \
+                                background-size: contain; \
+                                background-position: center;";
 
-          if (window.orientation == 'portrait-primary' || window.orientation == 'portrait-secondary') {
+          if (orientation == 'portrait-primary' || orientation == 'portrait-secondary') {
             body.style.backgroundImage = "url('portrait.png')";
             body.style.backgroundColor = "#40bb63";
           } else {
@@ -30,16 +31,16 @@
 
         (function(){
           window.addEventListener("orientationchange", function () {
-          const body = document.body;
-          if (body.style.backgroundImage == 'url("portrait.png")')  {
-            body.style.backgroundImage = 'url("landscape.png")';
-            body.style.backgroundColor = "#3b68cc";
-          } else {
-            body.style.backgroundImage = 'url("portrait.png")';
-            body.style.backgroundColor = "#40bb63";
-          }
-        }, false);
-      })();
+            const body = document.body;
+            if (body.style.backgroundImage == 'url("portrait.png")')  {
+              body.style.backgroundImage = 'url("landscape.png")';
+              body.style.backgroundColor = "#3b68cc";
+            } else {
+              body.style.backgroundImage = 'url("portrait.png")';
+              body.style.backgroundColor = "#40bb63";
+            }
+          }, false);
+        })();
       </script>
     </body>
 </html>
