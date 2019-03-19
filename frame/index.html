@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'/>
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+      <script>
+        (function () {
+          const body = document.body;
+          const html = document.querySelector('html');
+          const mql = window.matchMedia("(orientation: portrait)");
+
+          html.style.width = "100%";
+          html.style.height = "100%";
+          body.style.width = "100%";
+          body.style.height = "100%";
+          body.style.margin = "0";
+          body.style.backgroundRepeat = "no-repeat";
+          body.style.backgroundSize = "contain";
+          body.style.backgroundPosition = "center";
+
+          if (mql.matches) {
+            body.style.backgroundImage = "url('portrait.png')";
+            body.style.backgroundColor = "#40bb63";
+          } else {
+              body.style.backgroundImage = "url('landscape.png')";
+              body.style.backgroundColor = "#3b68cc";
+          }
+        })();
+
+        (function(){
+          window.addEventListener("orientationchange", function () {
+          const body = document.body;
+          if (body.style.backgroundImage == 'url("portrait.png")')  {
+            body.style.backgroundImage = 'url("landscape.png")';
+            body.style.backgroundColor = "#3b68cc";
+          } else {
+            body.style.backgroundImage = 'url("portrait.png")';
+            body.style.backgroundColor = "#40bb63";
+          }
+        }, false);
+      })();
+      </script>
+    </body>
+</html>
