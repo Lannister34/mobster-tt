@@ -30,8 +30,7 @@
                      position: fixed !important; \
                      left: 0; \
                      bottom: 0; \
-                     width: 100% \
-                     overflow: hidden;";
+                     width: 100%;";
 
   includeDiv.style.cssText = "margin: 0 !important; \
                             position: block !important; \
