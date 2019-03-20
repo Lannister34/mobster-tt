@@ -34,7 +34,7 @@
 
   includeDiv.style.cssText = "margin: 0 !important; \
                             position: block !important; \
-                            width: 100% !important; \
+                            width: inherit !important; \
                             height: 100% !important;";
 
   iframe.style.cssText = "width: inherit !important; \
@@ -43,6 +43,7 @@
 
   wrapper.style.marginBottom = 0.25 * window.outerHeight + "px";
   mainDiv.style.height = 0.25 * window.outerHeight + "px";
+
   window.addEventListener("resize", function() {
     wrapper.style.marginBottom = 0.25 * window.outerHeight + "px";
     mainDiv.style.height = 0.25 * window.outerHeight + "px";
