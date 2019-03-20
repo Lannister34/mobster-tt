@@ -36,10 +36,9 @@
             const body = document.body;
             const orientation = screen.msOrientation || screen.mozOrientation ||
                                 (screen.orientation || {}).type || window.orientation;
-
+alert(orientation);
               if (orientation == 'portrait-primary' || orientation == 'portrait-secondary' ||
                                   orientation == 0 || orientation == 180) {
-                                    alert(orientation);
               body.style.backgroundImage = "url('portrait.png')";
               body.style.backgroundColor = "#40bb63";
             } else {
