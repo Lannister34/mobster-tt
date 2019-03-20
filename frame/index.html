@@ -30,7 +30,7 @@
         })();
 
         (function () {
-          window.addEventListener("orientationchange", function () {
+          window.addEventListener("resize", function () {
             const body = document.body;
             const orientation = screen.msOrientation || screen.mozOrientation || (screen.orientation || {}).type;
 
@@ -42,7 +42,7 @@
                 body.style.backgroundColor = "#3b68cc";
             }
           }, false);
-
+        }) ();
       </script>
     </body>
 </html>
