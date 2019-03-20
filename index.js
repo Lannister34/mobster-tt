@@ -41,7 +41,6 @@
                         height: inherit !important; \
                         opacity: 1 !important;";
 
-  wrapper.style.marginBottom = 0.25*window.outerHeight+"px";
+  wrapper.style.marginBottom = 0.25 * window.outerHeight + "px";
   mainDiv.style.height = 0.25 * window.outerHeight + "px"
-  alert(window.outerHeight);
 }) ();
