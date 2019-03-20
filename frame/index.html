@@ -9,9 +9,8 @@
         (function () {
           const body = document.body;
           const html = document.querySelector('html');
-          const frame = this.screen || this;
-          const orientation = frame.msOrientation || frame.mozOrientation ||
-                              (frame.orientation || {}).type || window.orientation;
+          const orientation = screen.msOrientation || screen.mozOrientation ||
+                              (screen.orientation || {}).type || window.orientation;
 
           html.style.cssText = "width: 100%; \
                                 height: 100%;";
@@ -35,10 +34,8 @@
         (function () {
           window.addEventListener("resize", function () {
             const body = document.body;
-            const frame = this.screen || this;
-            const orientation = frame.msOrientation || frame.mozOrientation ||
-                                (frame.orientation || {}).type || window.orientation;
-                                alert('ok');
+            const orientation = screen.msOrientation || screen.mozOrientation ||
+                                (screen.orientation || {}).type || window.orientation;
 
               if (orientation == 'portrait-primary' || orientation == 'portrait-secondary' ||
                                   orientation == 0 || orientation == 180) {
