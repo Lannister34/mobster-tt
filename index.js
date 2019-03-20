@@ -45,7 +45,9 @@
   mainDiv.style.height = 0.25 * window.outerHeight + "px";
 
   window.addEventListener("resize", function() {
-    wrapper.style.marginBottom = 0.25 * window.outerHeight + "px";
-    mainDiv.style.height = 0.25 * window.outerHeight + "px";
+    wrapper.style.marginBottom = 0.25 * window.innerHeight + "px";
+    mainDiv.style.height = 0.25 * window.innerHeight + "px";
   })
+
+
 }) ();
