@@ -21,8 +21,16 @@
                                 background-size: contain; \
                                 background-position: center;";
 
-          if (orientation == 'portrait-primary' || orientation == 'portrait-secondary' ||
-                              orientation == 0 || orientation == 180) {
+            if (orientation == 0) {
+              if (window.parent.window.innerHeight > window.parent.window.innerWidth) {
+                body.style.backgroundImage = "url('portrait.png')";
+                body.style.backgroundColor = "#40bb63";
+              } else {
+                  body.style.backgroundImage = "url('landscape.png')";
+                  body.style.backgroundColor = "#3b68cc";
+              }
+            }  else   if (orientation == 'portrait-primary' || orientation == 'portrait-secondary'
+                          || orientation == 180) {
             body.style.backgroundImage = "url('portrait.png')";
             body.style.backgroundColor = "#40bb63";
           } else {
