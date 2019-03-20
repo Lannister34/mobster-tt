@@ -9,7 +9,7 @@
         (function () {
           const body = document.body;
           const html = document.querySelector('html');
-          const orientation = screen.msOrientation || screen.mozOrientation || (screen.orientation || {}).type;
+          const orientation = window.screen.msOrientation || window.screen.mozOrientation || (window.screen.orientation || {}).type;
 
           html.style.cssText = "width: 100%; \
                                 height: 100%;";
@@ -32,7 +32,7 @@
         (function () {
           window.addEventListener("resize", function () {
             const body = document.body;
-            const orientation = screen.msOrientation || screen.mozOrientation || (screen.orientation || {}).type;
+            const orientation = window.screen.msOrientation || window.screen.mozOrientation || (window.screen.orientation || {}).type;
 
             if (orientation == 'portrait-primary' || orientation == 'portrait-secondary') {
               body.style.backgroundImage = "url('portrait.png')";
