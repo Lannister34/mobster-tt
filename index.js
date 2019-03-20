@@ -30,7 +30,8 @@
                      position: fixed !important; \
                      left: 0; \
                      bottom: 0; \
-                     width: 100%;";
+                     width: 100% \
+                     overflow: hidden;";
 
   includeDiv.style.cssText = "margin: 0 !important; \
                             position: block !important; \
@@ -41,8 +42,8 @@
                         height: inherit !important; \
                         opacity: 1 !important;";
 
-  wrapper.style.marginBottom = 0.25 * window.outerHeight + "px";
-  mainDiv.style.height = 0.25 * window.outerHeight + "px";
+  wrapper.style.marginBottom = 0.25 * window.innerHeight + "px";
+  mainDiv.style.height = 0.25 * window.innerHeight + "px";
 
   window.addEventListener("resize", function() {
     wrapper.style.marginBottom = 0.25 * window.innerHeight + "px";
