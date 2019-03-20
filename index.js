@@ -24,6 +24,7 @@
   const mainDiv = document.querySelector('.mainDiv');
   const includeDiv = document.querySelector('.includeDiv');
   const iframe = document.querySelector('iframe');
+  const wrapper = document.querySelector('.wrapper');
 
   mainDiv.style.cssText = "margin: 0 !important; \
                      position: fixed !important; \
@@ -40,4 +41,6 @@
   iframe.style.cssText = "width: inherit !important; \
                         height: inherit !important; \
                         opacity: 1 !important;";
+
+  wrapper.style.cssText = "margin-bottom: 25%;";
 }) ();
