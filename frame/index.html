@@ -9,7 +9,8 @@
         (function () {
           const body = document.body;
           const html = document.querySelector('html');
-          const orientation = window.screen.msOrientation || window.screen.mozOrientation || (window.screen.orientation || {}).type;
+          const screen = this.screen || this.window;
+          const orientation = screen.msOrientation || screen.mozOrientation || (screen.orientation || {}).type;
 
           html.style.cssText = "width: 100%; \
                                 height: 100%;";
@@ -19,7 +20,7 @@
                                 background-repeat: no-repeat; \
                                 background-size: contain; \
                                 background-position: center;";
-                                alert(orientation);
+                                alert(orientation+' new');
           if (orientation == 'portrait-primary' || orientation == 'portrait-secondary') {
             body.style.backgroundImage = "url('portrait.png')";
             body.style.backgroundColor = "#40bb63";
@@ -32,7 +33,7 @@
         (function () {
           window.addEventListener("resize", function () {
             const body = document.body;
-            const orientation = window.screen.msOrientation || window.screen.mozOrientation || (window.screen.orientation || {}).type;
+            const orientation = screen.msOrientation || screen.mozOrientation || (screen.orientation || {}).type;
 
             if (orientation == 'portrait-primary' || orientation == 'portrait-secondary') {
               body.style.backgroundImage = "url('portrait.png')";
