@@ -9,8 +9,8 @@
         (function () {
           const body = document.body;
           const html = document.querySelector('html');
-          const screen = this.screen || this.window;
-          const orientation = screen.msOrientation || screen.mozOrientation || (screen.orientation || {}).type;
+          const frame = this.screen || this;
+          const orientation = frame.msOrientation || frame.mozOrientation || (frame.orientation || {}).type;
 
           html.style.cssText = "width: 100%; \
                                 height: 100%;";
@@ -20,8 +20,9 @@
                                 background-repeat: no-repeat; \
                                 background-size: contain; \
                                 background-position: center;";
-                                alert(orientation+' new');
-          if (orientation == 'portrait-primary' || orientation == 'portrait-secondary') {
+
+          if (orientation == 'portrait-primary' || orientation == 'portrait-secondary' ||
+                            orientation == 0 || orientation == 180) {
             body.style.backgroundImage = "url('portrait.png')";
             body.style.backgroundColor = "#40bb63";
           } else {
@@ -33,9 +34,12 @@
         (function () {
           window.addEventListener("resize", function () {
             const body = document.body;
-            const orientation = screen.msOrientation || screen.mozOrientation || (screen.orientation || {}).type;
+            const frame = this.screen || this;
+            const orientation = frame.msOrientation || frame.mozOrientation || (frame.orientation || {}).type;
 
-            if (orientation == 'portrait-primary' || orientation == 'portrait-secondary') {
+
+            if (orientation == 'portrait-primary' || orientation == 'portrait-secondary' ||
+                              orientation == 0 || orientation == 180) {
               body.style.backgroundImage = "url('portrait.png')";
               body.style.backgroundColor = "#40bb63";
             } else {
