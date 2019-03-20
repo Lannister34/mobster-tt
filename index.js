@@ -8,7 +8,7 @@
 
   mainDiv.appendChild(includeDiv);
   wrapper.insertAdjacentElement('afterEnd', mainDiv);
-})();
+}) ();
 
 (function () {
   const includeDiv = document.querySelector('.includeDiv');
@@ -17,7 +17,7 @@
   iframe.setAttribute('src', 'frame/index.html');
   iframe.setAttribute('frameborder', 0);
   includeDiv.appendChild(iframe);
-})();
+}) ();
 
 
 (function () {
@@ -40,4 +40,4 @@
   iframe.style.cssText = "width: inherit !important; \
                         height: inherit !important; \
                         opacity: 1 !important;";
-})();
+}) ();
