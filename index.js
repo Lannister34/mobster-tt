@@ -30,8 +30,7 @@
                      position: fixed !important; \
                      left: 0; \
                      bottom: 0; \
-                     width: 100%; \
-                     height: 25%;";
+                     width: 100%;";
 
   includeDiv.style.cssText = "margin: 0 !important; \
                             position: block !important; \
@@ -42,5 +41,7 @@
                         height: inherit !important; \
                         opacity: 1 !important;";
 
-  wrapper.style.cssText = "margin-bottom: 25%;";
+  wrapper.style.marginBottom = 0.25*window.outerHeight+"px";
+  mainDiv.style.height = 0.25 * window.outerHeight + "px"
+  alert(window.outerHeight);
 }) ();
