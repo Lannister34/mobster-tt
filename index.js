@@ -14,11 +14,10 @@
   const includeDiv = document.querySelector('.includeDiv');
   const iframe = document.createElement('iframe');
 
-  iframe.setAttribute('src', 'frame/index.html');
+    iframe.setAttribute('src', 'frame/index.html');
   iframe.setAttribute('frameborder', 0);
   includeDiv.appendChild(iframe);
 }) ();
-
 
 (function () {
   const mainDiv = document.querySelector('.mainDiv');
@@ -48,6 +47,4 @@
     wrapper.style.marginBottom = 0.25 * window.innerHeight + "px";
     mainDiv.style.height = 0.25 * window.innerHeight + "px";
   })
-
-
 }) ();

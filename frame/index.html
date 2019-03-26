@@ -20,50 +20,48 @@
                                 background-repeat: no-repeat; \
                                 background-size: contain; \
                                 background-position: center;";
-            alert(innerWidth + ' ' + innerHeight + ' ' + outerWidth + ' ' + outerHeight + ' ' + screen.height);
-            if (orientation == 0) {
-              if (window.parent.window.innerHeight > window.parent.window.innerWidth) {
+
+          if (orientation == 0) {
+            if (body.clientWidth < 4 * body.clientHeight) {
                 body.style.backgroundImage = "url('portrait.png')";
                 body.style.backgroundColor = "#40bb63";
-              } else {
-                  body.style.backgroundImage = "url('landscape.png')";
-                  body.style.backgroundColor = "#3b68cc";
-              }
-            }  else   if (orientation == 'portrait-primary' || orientation == 'portrait-secondary'
-                          || orientation == 180) {
-            body.style.backgroundImage = "url('portrait.png')";
-            body.style.backgroundColor = "#40bb63";
-          } else {
+            } else {
+                body.style.backgroundImage = "url('landscape.png')";
+                body.style.backgroundColor = "#3b68cc";
+            }
+          } else if (orientation == 'portrait-primary' || orientation == 'portrait-secondary'
+                     || orientation == 180) {
+              body.style.backgroundImage = "url('portrait.png')";
+              body.style.backgroundColor = "#40bb63";
+            } else {
               body.style.backgroundImage = "url('landscape.png')";
               body.style.backgroundColor = "#3b68cc";
           }
         }) ();
-
         (function () {
           window.addEventListener("resize", function () {
             const body = document.body;
             const orientation = screen.msOrientation || screen.mozOrientation ||
                                 (screen.orientation || {}).type || window.orientation;
-              if (orientation == 0) {
-                if (window.parent.window.innerHeight > window.parent.window.innerWidth) {
-                  body.style.backgroundImage = "url('portrait.png')";
-                  body.style.backgroundColor = "#40bb63";
-                } else {
-                  body.style.backgroundImage = "url('landscape.png')";
-                  body.style.backgroundColor = "#3b68cc";
-                }
-              } else if (orientation == 'portrait-primary' || orientation == 'portrait-secondary'
-                        || orientation == 180) {
-              body.style.backgroundImage = "url('portrait.png')";
-              body.style.backgroundColor = "#40bb63";
-            } else {
+
+            if (orientation == 0) {
+              if (body.clientWidth < 4 * body.clientHeight) {
+                body.style.backgroundImage = "url('portrait.png')";
+                body.style.backgroundColor = "#40bb63";
+              } else {
                 body.style.backgroundImage = "url('landscape.png')";
                 body.style.backgroundColor = "#3b68cc";
-            }
+              }
+            } else if (orientation == 'portrait-primary' || orientation == 'portrait-secondary'
+                       || orientation == 180) {
+                body.style.backgroundImage = "url('portrait.png')";
+                body.style.backgroundColor = "#40bb63";
+              } else {
+                body.style.backgroundImage = "url('landscape.png')";
+                body.style.backgroundColor = "#3b68cc";
+              }
           }, false);
         }) ();
-
-
       </script>
     </body>
 </html>
